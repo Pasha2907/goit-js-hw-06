@@ -6,12 +6,13 @@ const ingredients = [
   "Herbs",
   "Condiments",
 ];
-
-let siteNav = document.querySelector("ul");
-
-for (let i = 0; i < ingredients.length; i += 1) {
-  let newNavItem = document.createElement("li");
-  newNavItem.textContent = ingredients[i];
+const siteNav = document.querySelector("ul");
+const kek = [];
+ingredients.forEach((ingredient) => {
+  const newNavItem = document.createElement("li");
   newNavItem.classList.add("item");
-  siteNav.append(newNavItem);
-}
+  newNavItem.textContent = ingredient;
+  kek.push(newNavItem);
+});
+siteNav.append(...kek);
+console.log(siteNav);

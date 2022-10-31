@@ -13,17 +13,15 @@ const images = [
   },
 ];
 
-let galleryList = document.querySelector(".gallery");
+const galleryList = document.querySelector(".gallery");
 
-const element = images.map(({ url, alt }) => {
-  let newItem = document.createElement("li");
-  newItem.classList.add("list");
-  let newItemImg = document.createElement("img");
-  newItemImg.classList.add("item");
-  newItemImg.alt = alt;
-  newItemImg.src = url;
-  newItem.append(newItemImg);
-  galleryList.append(newItem);
+let markup = "";
+images.forEach(() => {
+  markup = images
+    .map(
+      (img) =>
+        `<li class="item"><img class="img" src="${img.url}" alt="${img.alt}"></li>`
+    )
+    .join("");
 });
-
-console.log(galleryList);
+galleryList.insertAdjacentHTML("afterbegin", markup);
