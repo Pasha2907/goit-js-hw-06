@@ -7,12 +7,12 @@ const ingredients = [
   "Condiments",
 ];
 const siteNav = document.querySelector("ul");
-const kek = [];
+const components = [];
 ingredients.forEach((ingredient) => {
   const newNavItem = document.createElement("li");
   newNavItem.classList.add("item");
   newNavItem.textContent = ingredient;
-  kek.push(newNavItem);
+  components.push(newNavItem);
 });
-siteNav.append(...kek);
+siteNav.append(...components);
 console.log(siteNav);
